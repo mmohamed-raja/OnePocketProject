@@ -1,0 +1,5 @@
+package com.bitspeed.customeridentituy.in.repository;
+
+public class ContactRepository {
+
+}

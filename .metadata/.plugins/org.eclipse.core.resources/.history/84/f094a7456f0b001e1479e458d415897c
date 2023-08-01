@@ -1,0 +1,5 @@
+package com.bitspeed.customeridentituy.in.model;
+
+public class ContactEntity {
+
+}

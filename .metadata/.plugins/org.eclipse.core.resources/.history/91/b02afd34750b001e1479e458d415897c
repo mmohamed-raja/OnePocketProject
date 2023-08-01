@@ -1,0 +1,8 @@
+package com.bitspeed.customeridentituy.in.service;
+
+import com.bitspeed.customeridentituy.in.model.IdentifyRequest;
+import com.bitspeed.customeridentituy.in.model.IdentifyResponse;
+
+public interface ContactService {
+	IdentifyResponse consolidateContact(IdentifyRequest request);
+}

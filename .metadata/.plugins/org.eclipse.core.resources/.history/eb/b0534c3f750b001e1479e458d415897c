@@ -1,0 +1,26 @@
+package com.bitspeed.customeridentituy.in.model;
+
+import java.util.List;
+
+public class IdentifyResponse {
+	private ContactEntity primaryContact;
+    private List<Integer> secondaryContactIds;
+    
+    
+    
+    public ContactEntity getPrimaryContact() {
+        return primaryContact;
+    }
+    
+    public void setPrimaryContact(ContactEntity savedContact) {
+        this.primaryContact = savedContact;
+    }
+    
+    public List<Integer> getSecondaryContactIds() {
+        return secondaryContactIds;
+    }
+    
+    public void setSecondaryContactIds(List<Integer> secondaryContactIds) {
+        this.secondaryContactIds = secondaryContactIds;
+    }
+}

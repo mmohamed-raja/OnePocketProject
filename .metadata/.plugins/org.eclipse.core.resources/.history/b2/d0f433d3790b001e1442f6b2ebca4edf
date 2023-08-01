@@ -1,0 +1,15 @@
+package com.bitspeed.customeridentituy.in;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Component;
+
+@SpringBootApplication
+@Component
+public class BitSpeedCustomerIdentity {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BitSpeedCustomerIdentity.class, args);
+	}
+
+}

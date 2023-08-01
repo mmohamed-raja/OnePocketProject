@@ -1,0 +1,15 @@
+package com.onepocket.task2;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+public class SumController {
+	@PostMapping("/sum")
+    public int sumArray(@RequestBody int[] numbers) {
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        return sum;
+    }
+}

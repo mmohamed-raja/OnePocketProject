@@ -1,0 +1,29 @@
+package com.bitspeed.customeridentituy.in.serviceimpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.bitspeed.customeridentituy.in.model.Contact;
+import com.bitspeed.customeridentituy.in.model.IdentifyRequest;
+import com.bitspeed.customeridentituy.in.model.IdentifyResponse;
+import com.bitspeed.customeridentituy.in.service.ContactService;
+
+public class ContactServiceImpl implements ContactService {
+	@Override
+	public IdentifyResponse consolidateContact(IdentifyRequest request) {
+		IdentifyResponse response = new IdentifyResponse();
+
+        
+        // Extract primary contact details from the request
+        Contact primaryContact = new Contact();
+        primaryContact.setEmails(new ArrayList<>(request.getEmails()));
+        primaryContact.setPhoneNumbers(new ArrayList<>(request.getPhoneNumbers()));
+        response.setPrimaryContact(primaryContact);
+        
+        // Extract secondary contact IDs
+        List<Integer> secondaryContactIds = new ArrayList<>(request.getSecondaryContactIds());
+        response.setSecondaryContactIds(secondaryContactIds);
+        
+        return response;
+	}
+}

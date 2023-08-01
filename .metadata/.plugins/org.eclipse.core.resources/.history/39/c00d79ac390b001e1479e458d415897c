@@ -1,0 +1,11 @@
+package com.bitspeed.customeridentituy.in.model;
+
+import java.util.List;
+
+public class IdentifyRequest {
+	private List<String> emails;
+    private List<String> phoneNumbers;
+    private List<Integer> secondaryContactIds;
+    
+
+}

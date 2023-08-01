@@ -1,0 +1,26 @@
+package com.bitspeed.customeridentituy.in.serviceimpl;
+
+import com.bitspeed.customeridentituy.in.repository.ContactRepository;
+
+public class ContactServiceImpl {
+	public ContactServiceImpl(ContactRepository contactRepository) {
+        this.contactRepository = contactRepository;
+    }
+
+    @Override
+    public IdentifyResponse consolidateContact(IdentifyRequest request) {
+        ContactEntity contactEntity = new ContactEntity();
+        contactEntity.setEmails(new ArrayList<>(request.getEmails()));
+        contactEntity.setPhoneNumbers(new ArrayList<>(request.getPhoneNumbers()));
+
+        List<Integer> secondaryContactIds = new ArrayList<>(request.getSecondaryContactIds());
+        contactEntity.setSecondaryContactIds(secondaryContactIds);
+
+        ContactEntity savedContact = contactRepository.save(contactEntity);
+
+        IdentifyResponse response = new IdentifyResponse();
+        response.setPrimaryContact(savedContact);
+
+        return response;
+
+}
